@@ -1,0 +1,15 @@
+﻿<Window x:Class="FormApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FormApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="318.451" Width="488.667">
+    <Grid Margin="0,0,2,-2">
+        <TextBox x:Name="textBox" HorizontalAlignment="Stretch" Height="auto" Margin="52,10,52,100" TextWrapping="WrapWithOverflow" Text="Input text File" VerticalAlignment="Stretch" Width="auto" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2" />
+        <Button x:Name="Save" Content="Save" HorizontalAlignment="Left" Margin="52,0,0,18" VerticalAlignment="Bottom" Width="75" Click="Save_Click"/>
+        <Button x:Name="Open" Content="Load" HorizontalAlignment="Right" Margin="0,0,52,18" VerticalAlignment="Bottom" Width="75" Click="Open_Click"/>
+        <Button x:Name="Close" Content="Close" HorizontalAlignment="Center" Margin="194,0,210,18" VerticalAlignment="Bottom" Width="75" Click="Close_Click"/>
+    </Grid>
+</Window>
