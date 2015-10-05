@@ -40,15 +40,17 @@ namespace Authentication
         {
             string s = Username.Text + "," + Password.Text;
             string fn = @"C:\Windows\Temp\user.txt";
+            string path = Directory.GetCurrentDirectory();
+            string file = path + @"account.txt";
             try
             {
 
-                AppendToFile(fn, s);
+                AppendToFile(file, s);
                 System.Windows.MessageBox.Show("Create Successful");
             }
             catch(System.IO.DirectoryNotFoundException ex)
             {
-                File.Create(fn);
+                File.Create(file);
             }
         }
     }
