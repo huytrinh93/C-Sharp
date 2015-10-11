@@ -1,0 +1,73 @@
+﻿<Window x:Class="FormApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FormApplication"
+        mc:Ignorable="d"
+        x:Name="window1" Title="Untitled - Text Editor" Height="321.79" Width="488.667" ResizeMode="CanResizeWithGrip">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Sources/FileIcon.xaml" />
+                <ResourceDictionary Source="Sources/OpenIcon.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid x:Name="grid1" Height="35" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+        <Menu Grid.Column="0" Grid.Row="0" RenderTransformOrigin="0.459,0.641">
+            <MenuItem Header="File" Width="63">
+                <MenuItem x:Name="NewMenu" Header="New" ToolTip="Create a new file" InputGestureText="CTRL+N" Click="MenuHandler_Click">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource FileIcon}" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+
+                <MenuItem x:Name="OpenMenu" Header="Open" ToolTip="Open a file" InputGestureText="CRTL+O" Click="MenuHandler_Click">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource OpenIcon}" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+
+                <MenuItem x:Name="SaveMenu" Header="Save" IsEnabled="False" ToolTip="Saves the current file" InputGestureText="CTRL+S" Click="MenuHandler_Click"/>
+                <MenuItem x:Name="SaveAsMenu" Header="SaveAs" IsEnabled="False" ToolTip="Saves the current file" Click="MenuHandler_Click"/>
+                <Separator/>
+                <MenuItem x:Name="ExitMenu" Header="Exit" ToolTip="Exits the program" Click="MenuHandler_Click"/>
+            </MenuItem>
+            <MenuItem Header="Edit" Width="64">
+                <MenuItem Command="Undo" InputGestureText="CTRL+Z"/>
+                <MenuItem Command="Redo" InputGestureText="CTRL+Y"/>
+                <Separator/>
+                <MenuItem Command="Cut" InputGestureText="CTRL+X"/>
+                <MenuItem Command="Copy" InputGestureText="CTRL+C"/>
+                <MenuItem Command="Paste" InputGestureText="CTRL+V"/>
+                <Separator/>
+                <MenuItem Command="SelectAll" InputGestureText="CTRL+A"/>
+            </MenuItem>
+            <MenuItem Header="Help" Width="64">
+                <MenuItem Header="About" x:Name="about_menu" Click="about_menu_Click"/>
+                
+            </MenuItem>
+        </Menu>
+        <TextBox x:Name="textBox" 
+                 Grid.Column="0" Grid.Row="1" 
+                 Margin="0,0,-338,-258" 
+                 TextWrapping="WrapWithOverflow"  
+                 HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" 
+                 AcceptsReturn="True" AcceptsTab="True" 
+                 FontFamily="Times New Roman" FontSize="17" 
+                 PreviewDragOver="ehDragOverMult" PreviewDrop="ehDropMult" HorizontalAlignment="Left" Width="481" Height="271" VerticalAlignment="Top"
+                 TextChanged="textBox_TextChanged"
+            />
+
+
+    </Grid>
+</Window>
