@@ -1,4 +1,7 @@
-Next version of TextPad
+#Compiled App
+/TextEditor/bin/Debug/FormApplication.exe
+
+#Next version of TextPad
 Implement a menubar that contains the following menus:
 
 File
