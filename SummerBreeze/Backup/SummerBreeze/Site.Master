@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SummerBreeze.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+  <title></title>
+  <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+  <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+  </asp:ContentPlaceHolder>
+</head>
+<body>
+  <form runat="server">
+  <div class="page">
+    <div class="header">
+      <div class="title">
+        <h1>
+          My Summer Breeze Application
+        </h1>
+      </div>
+      <div class="loginDisplay">
+        &nbsp;
+      </div>
+      <div class="clear hideSkiplink">
+        <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
+          IncludeStyleBlock="false" Orientation="Horizontal">
+          <Items>
+            <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Welcome" />
+            <asp:MenuItem NavigateUrl="~/Page5_OOP.aspx" Text="Objects" />
+            <asp:MenuItem NavigateUrl="~/Page1_New.aspx" Text="New" />
+            <asp:MenuItem NavigateUrl="~/Page2_List.aspx" Text="List" />
+            <asp:MenuItem NavigateUrl="~/Page3_NewAndList.aspx" Text="New and List" />
+            <asp:MenuItem NavigateUrl="~/Page4_NewEditAndList.aspx" Text="New Edit And List" />
+            <asp:MenuItem NavigateUrl="~/Playground.aspx" Text="Play Ground" />
+          </Items>
+        </asp:Menu>
+      </div>
+    </div>
+    <div class="main">
+      <h1 style="border-bottom: 0.143em solid #348CB2; font-size: 2em; margin-bottom: 0.357em;
+        text-transform: capitalize; width: 100%;">
+        <asp:ContentPlaceHolder ID="CurrentPage" runat="server" />
+      </h1>
+      <div style="width: auto; margin-bottom: 1em; padding: .8em; border: 3px solid #0487E0;
+        background-color: #EFEFEF;">
+      <asp:ContentPlaceHolder ID="Instructions" runat="server" />
+      </div>
+      <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </div>
+    <div class="clear">
+    </div>
+  </div>
+  <div class="footer">
+  </div>
+  </form>
+</body>
+</html>
